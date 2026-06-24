@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Portofolio Kreatif</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <a href="#" class="back-to-top" title="Kembali ke Atas">↑</a>
+    <nav style="position: fixed; top: 20px; right: 20px; background: rgba(255,255,255,0.8); padding: 10px 20px; border-radius: 20px; backdrop-filter: blur(5px);">
+    <a href="#work" style="margin-right: 15px; text-decoration: none; color: #333;">Karya</a>
+    <a href="#contact" style="text-decoration: none; color: #333;">Kontak</a>
+</nav>
+
+   <section class="about-me">
+    <div class="about-content">
+        <h1>Ryan Adi Cahyanto</h1>
+        <p style="font-size: 1.2rem; font-style: italic;">"Mengubah setiap perjalanan menjadi narasi visual."</p>
+        <p>Saya adalah illustrator yang memadukan teknik digital dengan bercerita. Proyek seperti <em>My Trip My Commission</em> adalah cara saya mendokumentasikan jejak kreatif saya.</p>
+    </div>
+    </section>
+
+    <main class="project-container">
+        <article class="project-card">
+            <div class="image-box"><img src="image/projek1.png" alt="Proyek 1"></div>
+            <div class="text-box">
+                <h2>My Trip My Commission: Seri 01</h2>
+                <p>Di sini saya menjelaskan latar belakang inspirasi dan tantangan teknis yang saya hadapi saat mengerjakan proyek ini...</p>
+            </div>
+        </article>
+
+        <article class="project-card reverse">
+            <div class="image-box"><img src="image/projek2.jpg" alt="Proyek 2"></div>
+            <div class="text-box">
+                <h2>Refleksi Perjalanan</h2>
+                <p>Bagian ini menceritakan bagaimana setiap tempat yang saya kunjungi mengubah gaya visual saya secara drastis.</p>
+            </div>
+        </article>
+    </main>
+        <!-- Di index.html -->
+<div class="contact-container">
+    <button class="btn-copy" onclick="copyEmail()">Salin Email Saya</button>
+<p id="email-text">halo@emailanda.com</p>
+</div>
+
+<div id="copy-notification" class="notification">
+    Email berhasil disalin!
+</div>
+
+<!-- Form Kontak WhatsApp -->
+<section id="contact">
+    <h3>Tertarik Bekerja Sama?</h3>
+    <div class="contact-container">
+        <input type="text" id="nama" placeholder="Nama Anda" required>
+        <textarea id="pesan" placeholder="Ceritakan ide visual Anda..."></textarea>
+        <button class="btn-whatsapp" onclick="kirimWhatsApp()">Chat via WhatsApp</button>
+    </div>
+</section>
+
+<div class="filter-container">
+    <a href="index.html" class="filter-btn">Semua</a>
+    <a href="ilustrasi.html" class="filter-btn">Ilustrasi</a>
+    <a href="3d.html" class="filter-btn">3D Art</a>
+    <a href="edukasi.html" class="filter-btn">Edukasi</a>
+</div>
+
+<!--Dark mode-->
+<button id="theme-toggle">🌙 Mode Gelap</button>
+
+    <script src="script.js"></script>
+
+</body>
+<nav style="position: fixed; top: 20px; right: 20px; z-index: 1000; background: rgba(255,255,255,0.8); padding: 10px 20px; border-radius: 20px; backdrop-filter: blur(5px);">
+        <a href="#work" style="margin-right: 15px; text-decoration: none; color: #333;">Karya</a>
+        <a href="#contact" style="text-decoration: none; color: #333;">Kontak</a>
+    </nav>
+    <footer style="text-align: center; padding: 50px; background: #f9f9f9; border-top: 1px solid #ddd;">
+    <p>Mari berkolaborasi dan ciptakan cerita visual bersama.</p>
+    <a href="mailto:emailanda@gmail.com" style="color: #555; text-decoration: underline;">Hubungi Saya</a>
+</footer>
+
+<script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.project-card');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+    
+</html>
+
